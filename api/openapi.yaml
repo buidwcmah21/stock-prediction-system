@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Stock Analysis API
+  description: API cung cấp dữ liệu chứng khoán từ Databricks Delta Lake (Kiến trúc SOA)
+  version: 1.0.0
+paths:
+  /api/v1/stocks:
+    get:
+      summary: Lấy danh sách tất cả mã cổ phiếu
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              example:
+                status: 200
+                total: 10
+                symbols: ["FPT.VN", "AAPL", "TSLA"]
+  /api/v1/stocks/{symbol}/indicators:
+    get:
+      summary: Lấy chỉ số tài chính của một mã cổ phiếu
+      parameters:
+        - name: symbol
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 5
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              example:
+                symbol: "FPT.VN"
+                data: [{"date": "2024-04-05", "close": 115000, "sma_20": 112000}]
