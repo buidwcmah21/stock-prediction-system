@@ -77,6 +77,6 @@
     *   Tuần 4: Kiểm thử toàn diện và viết báo cáo cuối kỳ.
 
 ---
-**Link GitHub:** [Dán link GitHub của bạn vào đây]
+**Link GitHub:** https://github.com/buidwcmah21/stock-prediction-system.git
 ```
 
